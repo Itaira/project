@@ -4,6 +4,7 @@
 
 from flask import Flask, request, render_template, redirect, url_for
 import db_connector
+import clean_environment
 
 app = Flask(__name__)
 
@@ -20,6 +21,9 @@ def login():
     # perform search based on index
     return redirect(url_for('user', user_id=user_id))
 
+# @app.route('/stop')
+# def stop():
+    # Close flask
 
 # supported methods
 @app.route('/users/get_user_data/<user_id>', methods=['GET'])
